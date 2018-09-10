@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<script src="~/assets/global/plugins/bootstrap-toastr/toastr.min.js"></script>
+<link href="~/assets/global/plugins/bootstrap-toastr/toastr.min.css" rel="stylesheet" />
+<label class="control-label visible-ie8 visible-ie9">E-Posta</label>
+<div class="input-icon">
+    <i class="fa fa-mail"></i>
+    <input id="e-mail" class="form-control placeholder-no-fix" type="text" placeholder="E-mail" />
+</div>
+<div class="input-icon">
+    <i class="fa fa-mail"></i>
+    <input id="kullaniciAdi" class="form-control placeholder-no-fix" type="text" placeholder="Kullanıcı Adı" />
+</div>
+<div class="input-icon">
+    <i class="fa fa-mail"></i>
+    <input id="sifre" class="form-control placeholder-no-fix" type="text" placeholder="Şifre" />
+</div>
+
+<div class="form-actions" style="padding-bottom:15%;">
+    <a onclick="MailGonder()" class="btn blue pull-right">
+        Gönder
+        <i class="fa fa-lock"></i>
+    </a>
+</div>
+
+
+<script>
+    $(document).keyup(function (e) {
+        if (e.keyCode == 13)
+            MailGonder();
+    });
+    function MailGonder() {
+
+        $.ajax({
+            type: 'POST',
+            url: '/KullaniciHome/MailGonder',
+            data: JSON.stringify({ }),
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            success: function (control) {
+                if (control == false)
+                    mesajPopup("Hata!..", "info");
+                else {
+                    mesajPopup("Gönderildi..", "info");
+                }
+            }
+
+        });
+    }
+
+    function mesajPopup(mesaj, mesajTipi) {
+        //tipi : success, error, warning, info
+        Command: toastr[mesajTipi](mesaj, "Mesaj")
+
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "positionClass": "toast-top-right",
+            "onclick": null,
+            "showDuration": "500",
+            "hideDuration": "1000",
+            "timeOut": "7000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    }
+
+</script>

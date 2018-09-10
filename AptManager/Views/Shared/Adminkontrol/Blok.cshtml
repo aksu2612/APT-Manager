@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Blok";
+}
+<script src="~/Scripts/Aksu.js"></script>
+<link href="~/assets/global/plugins/select2/select2.css" rel="stylesheet" />
+<script src="~/assets/global/plugins/select2/select2.min.js"></script>
+ <div class="tab-pane active" id="tab_0">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-gift"></i>Form Actions On Bottom
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse">
+                </a>
+                <a href="#portlet-config" data-toggle="modal" class="config">
+                </a>
+                <a href="javascript:;" class="reload">
+                </a>
+                <a href="javascript:;" class="remove">
+                </a>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <!-- BEGIN FORM-->
+            <form action="/Admin/Create" id="blokforum" class="form-horizontal">
+                <div class="form-body">
+                    <div class="form-group">
+                        <div class="form-group">
+                           
+                        </div>
+                        <label class="col-md-3 control-label">Site Seçiniz : </label>
+                        <div class="col-md-4">
+                            <label class="control-label visible-ie8 visible-ie9">Site : </label>
+                            <select name="SiteId" id="SiteId" class="select2 form-control"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Blok adı</label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <i class="fa fa-microphone"></i>
+                                <input type="text" id="BlokAdi" name="BlokAdi" class="form-control input-circle" placeholder="örneğin(A/B/C)">
+                            </div>
+                        </div>
+                    </div>
+               </div>
+                <div class="form-actions">
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button type="submit" class="btn btn-circle blue" >KAYDET</button>
+                            <button type="button" class="btn default" data-dismiss="modal" onclick="vazgec()">IPTAL</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- END FORM-->
+        </div>
+    </div>
+  </div>
+
+
+    <script>
+    $("#onlynumbers").bind('keypress', function (e) {
+        if (e.keyCode == '9' || e.keyCode == '16') {
+            return;
+        }
+        var code;
+        if (e.keyCode) code = e.keyCode;
+        else if (e.which) code = e.which;
+        if (e.which == 46)
+            return false;
+        if (code == 8 || code == 46)
+            return true;
+        if (code < 48 || code > 57)
+            return false;
+    });
+
+    //Disable paste
+    $("#onlynumbers").bind("paste", function (e) {
+        e.preventDefault();
+    });
+
+    $("#onlynumbers").bind('mouseenter', function (e) {
+        var val = $(this).val();
+        if (val != '0') {
+            val = val.replace(/[^0-9]+/g, "")
+            $(this).val(val);
+        }
+    });
+
+
+
+
+
+    tgAjx("", "/Login/GetSite", function (e) {
+        $('#SiteId')[0].innerHTML = "";
+
+        var liste = ""
+        for (var i = 0; i < e.length; i++) {
+            liste += "<option value='" + e[i].Id + "'> <i class='fa fa-key'> </i>" + e[i].Siteadi + "</option>";
+        }
+        $('#SiteId')[0].innerHTML = liste;
+    });
+    $('#SiteId').select2();
+
+
+    function vazgecs() {
+        $('#Blokekle').modal("hide");
+    }
+    </script>
+

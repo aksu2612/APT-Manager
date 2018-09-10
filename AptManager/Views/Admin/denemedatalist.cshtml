@@ -1,0 +1,82 @@
+﻿       <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                            <div class="portlet box blue-hoki">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-globe"></i>Datatable with TableTools
+                                    </div>
+                                    <div class="tools">
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Rendering engine
+                                                </th>
+                                                <th>
+                                                    Browser
+                                                </th>
+                                                <th>
+                                                    Platform(s)
+                                                </th>
+                                                <th>
+                                                    Engine version
+                                                </th>
+                                                <th>
+                                                    CSS grade
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tablodoldur"></tbody>
+                                    </table>
+                                </div>
+                            </div> 
+                        </div>
+                    </div> 
+<script>
+
+    function loadgrid() {
+        tgAjx("", "/Login/GetSite", function (e) {
+            $('#tablodoldur')[0].innerHTML = "";
+            var liste = "";
+
+            for (var i = 0; i < e.length; i++) {
+                liste += "<tr>";
+                liste += "<td>" + (i + 1) + "</td>";
+                liste += " <td>" + e[i].Siteadi + "</td>";
+                liste += " <td>" + e[i].Adres + "</td>";
+                liste += "<td>" + e[i].Onay + "</td>";
+                liste += "<td>" + e[i].Dairesayisi + "</td>"
+                liste += "<td><Button type='button' class='btn btn-primary'  onclick='sil(" + e[i].Id + ")'>sil</button></td>";
+                liste += "<td>   <Button type='submit' class='btn btn-primary' onclick='update(" + e[i].Id + ")' href='#tgIsTalepKayit' data-toggle='modal' >Güncelle </button> </td>";
+                liste += "<td>   <Button type='submit' class='btn btn-primary' onclick='update(" + e[i].Id + ")' href='#Blokekle' data-toggle='modal' >Blok </button> </td>";
+
+            }
+            $('#tablodoldur')[0].innerHTML = liste;
+
+        });
+    }
+    $(document).ready(function (f) {
+        loadgrid();
+    });
+    function tgAjx(model, url, func) {
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: JSON.stringify(model),
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            success: func,
+            error: function (xhr, errorType, exception) {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    location.reload();
+                } else {
+                    mesajPopup("Hata Verisi : " + this.data, "error");
+                }
+            }
+        });
+    }
+</script>

@@ -1,0 +1,223 @@
+﻿@{    
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+ }
+<!DOCTYPE html>
+<link href="~/assets/global/css/plugins.css" rel="stylesheet" />
+<script src="~/Scripts/Aksu.js"></script>
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Kullanıcı Onayla</title>
+</head>
+<body>
+    <div>
+    
+
+        <div class="portlet-body">
+            <div class="table-toolbar">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="btn-group">
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr role="row">
+                        <th class="sorting_asc" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+										 Username
+									: activate to sort column ascending"
+                            style="width: 165px;">
+                          Sıra
+                        </th>
+
+                        <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" aria-label="
+										 Full Name
+									: activate to sort column ascending"
+                            style="width: 208px;">
+                           Adi
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" aria-label="
+										 Points
+									: activate to sort column ascending"
+                            style="width: 111px;">
+                     Soyad
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" aria-label="
+										 Points
+									: activate to sort column ascending"
+                            style="width: 111px;">
+                            E-posta
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" aria-label="
+										 Points
+									: activate to sort column ascending"
+                            style="width: 111px;">
+                          Telefon
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" aria-label="
+										 Points
+									: activate to sort column ascending"
+                            style="width: 111px;">
+                            Kapı no
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" aria-label="
+										 Points
+									: activate to sort column ascending"
+                            style="width: 111px;">
+                        Site Bilgileri
+                        </th>
+                        <th class="sorting" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" aria-label="
+										 Points
+									: activate to sort column ascending"
+                            style="width: 111px;">
+                                        Onay
+                                            </th>
+                    </tr>
+                </thead>
+                <tbody id="tablodoldur"></tbody>
+            </table>
+
+        </div>
+    </div>
+</body>
+</html>
+<div id="Onayla" class="modal fade" aria-hidden="true" style="display: none; width: 70%; left: 14%; top: 13%;">
+    <div class="modal-dialog modal-full">
+        <div class="modal-content" style=""><h3>Seçilen kisinin site bilgileri </h3>
+            <div class="modal-body" style="padding: 0px;">
+                <div class="form-horizontal">
+                    <div class="form-body">
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">         Site Adı</label>
+                                <div class="col-md-7">
+                                    <div class="input-group">
+                                        <span class="input-group-addon "><i class="fa fa-font"></i></span>
+                                        <input id="SAdi" type="text" class="form-control " name="Adi">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label"> Adres</label>
+                                <div class="col-md-7">
+                                    <div class="input-group">
+                                        <span class="input-group-addon "><i class="fa fa-user"></i></span>
+                                        <input id="Adres" type="text" class="form-control " name="adres">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" id="onlynumbers">
+                                <label class="col-md-3 control-label">Daire Sayisi</label>
+                                <div class="col-md-7">
+                                    <div class="input-group">
+                                        <span class="input-group-addon "><i class="fa fa-user"></i></span>
+                                        <input id="DaireSayisi" type="text" class="form-control " name="eposta">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-7">
+                                        <button type="button" class="btn default" data-dismiss="modal" onclick="vazgec()">Tamam</button>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function loadgrid() {
+        tgAjx("", "/Admin/GetKisibildirim", function (e) {  
+           
+            $('#tablodoldur')[0].innerHTML = "";
+            var liste = "";
+            for (var i = 0; i < e.length; i++) {
+         
+                liste += "<tr>";
+                liste += "<td>" + (i + 1) + "</td>";
+                liste += " <td>" + e[i].Adi + "</td>";
+                liste += " <td>" + e[i].Soyadi + "</td>";
+                liste += "<td>" + e[i].Email + "</td>";
+                liste += "<td>" + e[i].Telefon + "</td>";
+                liste += "<td>" + e[i].Kapino + "</td>";
+               
+                liste += "<td>   <Button type='button' class='btn btn-primary'  href='#Onayla' data-toggle='modal' onclick='update(" + e[i].Siteid + ")'>Site Bilgileri </button> </td>";
+                liste += "<td>   <Button type='button' class='btn btn-primary'  data-toggle='modal' onclick='funcModal(" + e[i].Id + ")'>Onayla </button> </td>";
+            }
+            $('#tablodoldur')[0].innerHTML = liste
+        });
+    
+ 
+    }
+
+
+    function update(e) {
+        tgAjx('', "/Admin/GetSiteById?Id=" + e, function (s) {
+
+                $('#SAdi').val(s.Siteadi);
+                $('#Adres').val(s.Adres);
+                $('#DaireSayisi').val(s.Dairesayisi);
+
+            });
+        $('#btnSend').attr('onclick', 'funcModal(false)');
+
+    }
+    function funcModal(e) {
+        tgAjx('', "/Admin/KisiUpdate?id=" + e, function (w) {
+            alert(w);
+            loadgrid();
+            if (w) {
+                alert("onaylandı e posta yollandı");
+                    
+            }
+          
+        });
+
+    }
+
+    function email(e) {
+        tgAjx("", "/KullaniciHome/MailGonder?mail="+e , function (s) {
+            if (s) { mesajPopup("mesajj", "info");  loadgrid();}
+        });
+    }
+    function mesajPopup(mesaj, mesajTipi) {
+        //tipi : success, error, warning, info
+        Command: toastr[mesajTipi](mesaj, "Mesaj")
+
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "positionClass": "toast-top-right",
+            "onclick": null,
+            "showDuration": "500",
+            "hideDuration": "1000",
+            "timeOut": "7000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    }
+    $(document).ready(function (f) {
+        loadgrid();
+    });
+
+ 
+</script>
+<script src="~/assets/global/plugins/bootstrap-toastr/toastr.min.js"></script>
+<link href="~/assets/global/plugins/bootstrap-toastr/toastr.min.css" rel="stylesheet" />

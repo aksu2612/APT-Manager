@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AptYonetimModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminKullaniciadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AdminParola" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tc" Type="int" Nullable="false" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Tel" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bildirim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Icerik" Type="text" Nullable="false" />
+          <Property Name="Kayittarihi" Type="datetime" Nullable="false" />
+          <Property Name="Yayimtarihi" Type="datetime" Nullable="false" />
+          <Property Name="Siteid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Blok">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BlokAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SiteId" Type="int" />
+        </EntityType>
+        <EntityType Name="Borc">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BorcMiktari" Type="int" Nullable="false" />
+          <Property Name="Borcadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Borcaciklama" Type="text" Nullable="false" />
+          <Property Name="Odenen" Type="int" Nullable="false" />
+          <Property Name="OdenenT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="KisiBildirim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Eposta" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SiteId" Type="int" Nullable="false" />
+          <Property Name="KisiId" Type="int" Nullable="false" />
+          <Property Name="Adres" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Onay" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Adi" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Soyadi" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Telefon" Type="int" Nullable="false" />
+          <Property Name="Kapino" Type="int" Nullable="false" />
+          <Property Name="Siteid" Type="int" Nullable="false" />
+          <Property Name="Onay" Type="bit" Nullable="false" />
+          <Property Name="BlokId" Type="int" Nullable="false" />
+          <Property Name="KullaniciTipi" Type="int" Nullable="false" />
+          <Property Name="BorcId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Siteadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Onay" Type="bit" Nullable="false" />
+          <Property Name="Dairesayisi" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="AptYonetimModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bildirim" EntityType="Self.Bildirim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Blok" EntityType="Self.Blok" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Borc" EntityType="Self.Borc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KisiBildirim" EntityType="Self.KisiBildirim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Site" EntityType="Self.Site" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tur" EntityType="Self.Tur" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AptYonetimModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminKullaniciadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminParola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tc" Type="Int32" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tel" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bildirim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kayittarihi" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Yayimtarihi" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Siteid" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Blok">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BlokAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SiteId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Borc">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BorcMiktari" Type="Int32" Nullable="false" />
+          <Property Name="Borcadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Borcaciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Odenen" Type="Int32" Nullable="false" />
+          <Property Name="OdenenT" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="KisiBildirim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SiteId" Type="Int32" Nullable="false" />
+          <Property Name="KisiId" Type="Int32" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Onay" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adi" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Soyadi" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sifre" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefon" Type="Int32" Nullable="false" />
+          <Property Name="Kapino" Type="Int32" Nullable="false" />
+          <Property Name="Siteid" Type="Int32" Nullable="false" />
+          <Property Name="Onay" Type="Boolean" Nullable="false" />
+          <Property Name="BlokId" Type="Int32" Nullable="false" />
+          <Property Name="KullaniciTipi" Type="Int32" Nullable="false" />
+          <Property Name="BorcId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Siteadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Onay" Type="Boolean" Nullable="false" />
+          <Property Name="Dairesayisi" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="AptYonetimEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admin" EntityType="Self.Admin" />
+          <EntitySet Name="Bildirim" EntityType="Self.Bildirim" />
+          <EntitySet Name="Blok" EntityType="Self.Blok" />
+          <EntitySet Name="Borc" EntityType="Self.Borc" />
+          <EntitySet Name="KisiBildirim" EntityType="Self.KisiBildirim" />
+          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
+          <EntitySet Name="Site" EntityType="Self.Site" />
+          <EntitySet Name="Tur" EntityType="Self.Tur" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AptYonetimModelStoreContainer" CdmEntityContainer="AptYonetimEntities">
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="AptYonetimModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AdminKullaniciadi" ColumnName="AdminKullaniciadi" />
+                <ScalarProperty Name="AdminParola" ColumnName="AdminParola" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Tc" ColumnName="Tc" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bildirim">
+            <EntityTypeMapping TypeName="AptYonetimModel.Bildirim">
+              <MappingFragment StoreEntitySet="Bildirim">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+                <ScalarProperty Name="Kayittarihi" ColumnName="Kayittarihi" />
+                <ScalarProperty Name="Yayimtarihi" ColumnName="Yayimtarihi" />
+                <ScalarProperty Name="Siteid" ColumnName="Siteid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Blok">
+            <EntityTypeMapping TypeName="AptYonetimModel.Blok">
+              <MappingFragment StoreEntitySet="Blok">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BlokAdi" ColumnName="BlokAdi" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Borc">
+            <EntityTypeMapping TypeName="AptYonetimModel.Borc">
+              <MappingFragment StoreEntitySet="Borc">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BorcMiktari" ColumnName="BorcMiktari" />
+                <ScalarProperty Name="Borcadi" ColumnName="Borcadi" />
+                <ScalarProperty Name="Borcaciklama" ColumnName="Borcaciklama" />
+                <ScalarProperty Name="Odenen" ColumnName="Odenen" />
+                <ScalarProperty Name="OdenenT" ColumnName="OdenenT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KisiBildirim">
+            <EntityTypeMapping TypeName="AptYonetimModel.KisiBildirim">
+              <MappingFragment StoreEntitySet="KisiBildirim">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="KisiId" ColumnName="KisiId" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Onay" ColumnName="Onay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanici">
+            <EntityTypeMapping TypeName="AptYonetimModel.Kullanici">
+              <MappingFragment StoreEntitySet="Kullanici">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Adi" ColumnName="Adi" />
+                <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Kapino" ColumnName="Kapino" />
+                <ScalarProperty Name="Siteid" ColumnName="Siteid" />
+                <ScalarProperty Name="Onay" ColumnName="Onay" />
+                <ScalarProperty Name="BlokId" ColumnName="BlokId" />
+                <ScalarProperty Name="KullaniciTipi" ColumnName="KullaniciTipi" />
+                <ScalarProperty Name="BorcId" ColumnName="BorcId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Site">
+            <EntityTypeMapping TypeName="AptYonetimModel.Site">
+              <MappingFragment StoreEntitySet="Site">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Siteadi" ColumnName="Siteadi" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Onay" ColumnName="Onay" />
+                <ScalarProperty Name="Dairesayisi" ColumnName="Dairesayisi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tur">
+            <EntityTypeMapping TypeName="AptYonetimModel.Tur">
+              <MappingFragment StoreEntitySet="Tur">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

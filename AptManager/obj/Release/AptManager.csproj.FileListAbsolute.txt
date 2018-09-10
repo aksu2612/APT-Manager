@@ -1,0 +1,72 @@
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\AptManager.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\AptManager.pdb
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\Antlr3.Runtime.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\EntityFramework.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\Newtonsoft.Json.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Net.Http.Formatting.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.Http.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.Http.WebHost.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.Mvc.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.Optimization.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.Providers.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.Razor.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.WebPages.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.WebPages.Razor.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\WebGrease.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\EntityFramework.xml
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\Newtonsoft.Json.xml
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Net.Http.Formatting.xml
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.Http.xml
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.Http.WebHost.xml
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.Mvc.xml
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.Razor.xml
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.WebPages.xml
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\bin\System.Web.WebPages.Razor.xml
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\obj\Release\AptManager.dll
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\obj\Release\AptManager.pdb
+C:\Users\Duphin1\documents\visual studio 2012\Projects\AptManager\AptManager\obj\Release\AptManager.csprojResolveAssemblyReference.cache
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\AptManager.dll.config
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\AptManager.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\AptManager.pdb
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\Antlr3.Runtime.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\EntityFramework.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\Microsoft.Owin.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\Microsoft.Owin.Security.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\Newtonsoft.Json.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\Owin.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Net.Http.Formatting.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.Http.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.Http.WebHost.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.Mvc.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.Optimization.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.Providers.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.Razor.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.WebPages.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.WebPages.Razor.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\WebGrease.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\Microsoft.Owin.xml
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\Microsoft.Owin.Security.xml
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\Newtonsoft.Json.xml
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Net.Http.Formatting.xml
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.Http.xml
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.Http.WebHost.xml
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\EntityFramework.xml
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.Mvc.xml
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.Razor.xml
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.WebPages.xml
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\bin\System.Web.WebPages.Razor.xml
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\obj\Release\AptManager.csprojResolveAssemblyReference.cache
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\obj\Release\AptManager.dll
+C:\Users\Samsung-Pc\Desktop\AptManager\AptManager\obj\Release\AptManager.pdb

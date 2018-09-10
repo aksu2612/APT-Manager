@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AptYonetimModelStoreContainer" CdmEntityContainer="AptYonetimEntities">
+    <EntitySetMapping Name="Admin">
+      <EntityTypeMapping TypeName="AptYonetimModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AdminKullaniciadi" ColumnName="AdminKullaniciadi" />
+          <ScalarProperty Name="AdminParola" ColumnName="AdminParola" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tc" ColumnName="Tc" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bildirim">
+      <EntityTypeMapping TypeName="AptYonetimModel.Bildirim">
+        <MappingFragment StoreEntitySet="Bildirim">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="Kayittarihi" ColumnName="Kayittarihi" />
+          <ScalarProperty Name="Yayimtarihi" ColumnName="Yayimtarihi" />
+          <ScalarProperty Name="Siteid" ColumnName="Siteid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blok">
+      <EntityTypeMapping TypeName="AptYonetimModel.Blok">
+        <MappingFragment StoreEntitySet="Blok">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BlokAdi" ColumnName="BlokAdi" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Borc">
+      <EntityTypeMapping TypeName="AptYonetimModel.Borc">
+        <MappingFragment StoreEntitySet="Borc">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BorcMiktari" ColumnName="BorcMiktari" />
+          <ScalarProperty Name="Borcadi" ColumnName="Borcadi" />
+          <ScalarProperty Name="Borcaciklama" ColumnName="Borcaciklama" />
+          <ScalarProperty Name="Odenen" ColumnName="Odenen" />
+          <ScalarProperty Name="OdenenT" ColumnName="OdenenT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KisiBildirim">
+      <EntityTypeMapping TypeName="AptYonetimModel.KisiBildirim">
+        <MappingFragment StoreEntitySet="KisiBildirim">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="KisiId" ColumnName="KisiId" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Onay" ColumnName="Onay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanici">
+      <EntityTypeMapping TypeName="AptYonetimModel.Kullanici">
+        <MappingFragment StoreEntitySet="Kullanici">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Kapino" ColumnName="Kapino" />
+          <ScalarProperty Name="Siteid" ColumnName="Siteid" />
+          <ScalarProperty Name="Onay" ColumnName="Onay" />
+          <ScalarProperty Name="BlokId" ColumnName="BlokId" />
+          <ScalarProperty Name="KullaniciTipi" ColumnName="KullaniciTipi" />
+          <ScalarProperty Name="BorcId" ColumnName="BorcId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Site">
+      <EntityTypeMapping TypeName="AptYonetimModel.Site">
+        <MappingFragment StoreEntitySet="Site">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Siteadi" ColumnName="Siteadi" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Onay" ColumnName="Onay" />
+          <ScalarProperty Name="Dairesayisi" ColumnName="Dairesayisi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tur">
+      <EntityTypeMapping TypeName="AptYonetimModel.Tur">
+        <MappingFragment StoreEntitySet="Tur">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

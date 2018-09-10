@@ -1,0 +1,154 @@
+﻿<script src="/Scripts/jquery-1.7.1.min.js"></script>
+<link href="/Content/themes/base/jquery-ui.css" rel="stylesheet">
+<link href="/Content/themes/base/jquery.ui.button.css" rel="stylesheet">
+<script src="~/Scripts/jquery-1.7.1.intellisense.js"></script>
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/_references.js"></script>
+<script src="/Scripts/_references.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<div class="portlet box blue" id="kayit">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-gift"></i>
+             Kullanıcı Kayıt Ekranı
+           
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+            <a href="javascript:;" onclick="loadgrid()" class="reload"></a>
+            <a href="javascript:;" onclick="vazgecs()" style="color:white;">X</a>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <div class="form-horizontal">
+            <div class="form-body">
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">         Adı</label>
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="fa fa-font"></i></span>
+                                <input id="site" type="text" class="form-control " placeholder="Site Adı" name="Siteadi">
+                                <input id="Id" type="text" class="form-control " style="display:none" name="Siteadi">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Adres</label>
+                        <div class="col-md-7">      
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="fa fa-user"></i></span>
+                                <input id="Adres" type="text" class="form-control " name="Adres" placeholder="Adres">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" id="onlynumbers">
+                        <label class="col-md-3 control-label">Daire Sayısı</label>
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="fa fa-user"></i></span>
+                                <input id="dairesayisi" type="text" class="form-control " name="Dairesayisi" placeholder="Daire Sayısı(!!Yanlız Rakam!!)">
+                            </div>
+                        </div>
+                    </div>
+               </div>
+             
+            </div>
+           
+        </div>
+             <div class="form-group">
+                 <label>
+                     <input id="checkboxss" type="checkbox" name="tnc" value="1" /> Onay
+                
+                </label>
+             <div id="register_tnc_error">
+           </div>
+         </div>
+        <div class="form-actions">
+            <div class="row">
+                <div class="col-md-offset-3 col-md-7">
+                    <button type="button" class="btn default" data-dismiss="modal" onclick="vazgec()">Vazgeç</button>
+                    <button id="btnSend" type="button" data-dismiss="modal" class="btn blue" onclick="funcModalSend(true)"><i class="fa fa-check"></i>Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END FORM-->
+</div>
+
+<script>
+    $("#onlynumbers").bind('keypress', function (e) {
+        if (e.keyCode == '9' || e.keyCode == '16') {
+            return;
+        }
+        var code;
+        if (e.keyCode) code = e.keyCode;
+        else if (e.which) code = e.which;
+        if (e.which == 46)
+            return false;
+        if (code == 8 || code == 46)
+            return true;
+        if (code < 48 || code > 57)
+            return false;
+    });
+
+    //Disable paste
+    $("#onlynumbers").bind("paste", function (e) {
+        e.preventDefault();
+    });
+
+    $("#onlynumbers").bind('mouseenter', function (e) {
+        var val = $(this).val();
+        if (val != '0') {
+            val = val.replace(/[^0-9]+/g, "")
+            $(this).val(val);
+        }
+    });
+
+    function funcModalSend(e) {
+
+        $('#tgIsTalepKayit').modal("hide");
+        var model = {
+            Id: $('#Id').val(),
+            Siteadi: $('#site').val(),
+            Adres: $('#Adres').val(),
+            DaireSayisi: $('#dairesayisi').val(),
+            Onay: $("#checkboxss")[0].checked
+           
+        };
+        if (e) {
+            tgAjx(model, "/Admin/SiteKayit", "");
+        }
+        else {
+            tgAjx(model, "/Admin/asdasd", "");
+        }
+
+        loadgrid();
+        texboxtemizleme(); 
+    }
+
+    function vazgec() {
+        $("#tgIsTalepKayit").modal("hide");
+        texboxtemizleme(); 
+    }
+    //function vazgecs() {
+    //    $('#tgIsTalepKayit').modal("hide");
+    //    texboxtemizleme();
+    //}
+  
+    function update(e) {
+        tgAjx('', "/Admin/GetSiteById?siteid=" + e, function (e) {
+
+            $('#site').val(e.Siteadi);
+            $('#Adres').val(e.Adres);
+            $('#dairesayisi').val(e.Dairesayisi);
+            $('#Id').val(e.Id);
+        });
+
+        $('#btnSend').attr('onclick', 'funcModalSend(false)');
+
+    }
+</script>
